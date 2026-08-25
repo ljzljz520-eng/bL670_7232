@@ -25,9 +25,6 @@ func (h *Handler) Prepare(number, participant string) Submission {
 
 func (h *Handler) Submit(number, participant string, labels []string) Submission {
 	current := h.Prepare(number, participant)
-	if len(h.current) > 0 {
-		current.Number = h.current[0]
-	}
 	for _, label := range labels {
 		h.template = append(h.template, label)
 	}
